@@ -1,21 +1,35 @@
+
+import javax.swing.JCheckBox;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author dorki
  */
 public class Szinhaz extends javax.swing.JFrame {
 
+    int jegyAlapAr = -1;
+    int db, eloadas;
+    double vegsoAr,szorzo,;
+
     /**
      * Creates new form Szinhaz
      */
     public Szinhaz() {
         initComponents();
-    }
+        jegyAlapAr = 0;
+        
+        szorzo = 1;
+         eloadasSzamitasa();
 
+        db = 1;
+
+        szamitasEsKiiras();
+    }
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -25,35 +39,107 @@ public class Szinhaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        jPanel4 = new javax.swing.JPanel();
+        lblFizdb = new javax.swing.JLabel();
+        numDb = new javax.swing.JSpinner();
+        lblAr = new javax.swing.JLabel();
+        lblFizFt = new javax.swing.JLabel();
+        cmbValaszthatoJegyek = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        chbBab = new javax.swing.JCheckBox();
+        chbDrama = new javax.swing.JCheckBox();
+        chbOpera = new javax.swing.JCheckBox();
+        chbBalett = new javax.swing.JCheckBox();
+        chbMusical = new javax.swing.JCheckBox();
+        chbKomedia = new javax.swing.JCheckBox();
+        jTextField2 = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        chbHarom = new javax.swing.JCheckBox();
+        chbFiuk = new javax.swing.JCheckBox();
+        chbGatsby = new javax.swing.JCheckBox();
+        chbDiotoro = new javax.swing.JCheckBox();
+        chbVarazsfuvola = new javax.swing.JCheckBox();
+        chbJuan = new javax.swing.JCheckBox();
+        chbRomeo = new javax.swing.JCheckBox();
+        chbCsongor = new javax.swing.JCheckBox();
+        chbEmber = new javax.swing.JCheckBox();
+        chbHegedus = new javax.swing.JCheckBox();
+        chbIstvan = new javax.swing.JCheckBox();
+        chbAlom = new javax.swing.JCheckBox();
+        chbHolle = new javax.swing.JCheckBox();
+        chbKrum = new javax.swing.JCheckBox();
+        chbNap = new javax.swing.JCheckBox();
+        chbBarany = new javax.swing.JCheckBox();
+        chbGengszter = new javax.swing.JCheckBox();
+        chbHattyuk = new javax.swing.JCheckBox();
+        btnVesz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Színház");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Jegyek"));
 
-        jTextField1.setEditable(false);
-        jTextField1.setText("Kérem válasszon jegyet!");
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Fizetendő"));
 
-        jCheckBox1.setText("Diák ");
+        lblFizdb.setText("db:");
 
-        jCheckBox2.setText("Gyerek ");
+        numDb.setModel(new javax.swing.SpinnerNumberModel(1, 0, 20, 1));
+        numDb.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                numDbStateChanged(evt);
+            }
+        });
 
-        jCheckBox3.setText("Felnőtt");
+        lblAr.setText("   0");
 
-        jCheckBox4.setText("Kedvezményes (fogyatékkal élő, szenior)");
+        lblFizFt.setText("Ft");
 
-        jLabel2.setText("db:");
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lblAr, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblFizFt, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lblFizdb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(numDb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAr)
+                    .addComponent(lblFizFt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFizdb)
+                    .addComponent(numDb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 20, 1));
+        cmbValaszthatoJegyek.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kérem válasszon jegyet!", "Diák", "Gyerek", "Felnőtt", "Kedvezményes(fogyatékkal élő", "szenior)" }));
+        cmbValaszthatoJegyek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbValaszthatoJegyekActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -62,72 +148,611 @@ public class Szinhaz extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                        .addGap(22, 22, 22)
+                        .addComponent(cmbValaszthatoJegyek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(cmbValaszthatoJegyek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 36)); // NOI18N
         jLabel1.setText(" Színházi Káprázat");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Kategóriák"));
+
+        buttonGroup1.add(chbBab);
+        chbBab.setText("Bábjáték");
+        chbBab.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbBabItemStateChanged(evt);
+            }
+        });
+
+        buttonGroup1.add(chbDrama);
+        chbDrama.setText("Dráma");
+        chbDrama.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbDramaItemStateChanged(evt);
+            }
+        });
+
+        buttonGroup1.add(chbOpera);
+        chbOpera.setText("Opera");
+        chbOpera.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbOperaItemStateChanged(evt);
+            }
+        });
+
+        buttonGroup1.add(chbBalett);
+        chbBalett.setText("Balett");
+        chbBalett.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbBalettItemStateChanged(evt);
+            }
+        });
+
+        buttonGroup1.add(chbMusical);
+        chbMusical.setText("Musical");
+        chbMusical.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbMusicalItemStateChanged(evt);
+            }
+        });
+
+        buttonGroup1.add(chbKomedia);
+        chbKomedia.setText("Komédia");
+        chbKomedia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbKomediaItemStateChanged(evt);
+            }
+        });
+
+        jTextField2.setText("Kérem válasszon kategóriát!");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(chbDrama, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(chbMusical, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(chbKomedia, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chbBalett, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chbOpera, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chbBab, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbOpera)
+                    .addComponent(chbKomedia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbDrama)
+                    .addComponent(chbBalett))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbMusical)
+                    .addComponent(chbBab))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Előadások"));
+
+        buttonGroup2.add(chbHarom);
+        chbHarom.setText("Három komédia");
+
+        buttonGroup5.add(chbFiuk);
+        chbFiuk.setText("A Pál utcai fiúk");
+
+        buttonGroup5.add(chbGatsby);
+        chbGatsby.setText("A nagy Gatsby");
+
+        buttonGroup4.add(chbDiotoro);
+        chbDiotoro.setText("A Diótörő");
+
+        buttonGroup6.add(chbVarazsfuvola);
+        chbVarazsfuvola.setText("A Varázsfuvola");
+
+        buttonGroup2.add(chbJuan);
+        chbJuan.setText("Don Juan");
+
+        buttonGroup3.add(chbRomeo);
+        chbRomeo.setText("Rómeó és Júlia");
+
+        buttonGroup3.add(chbCsongor);
+        chbCsongor.setText("Csongor és Tünde");
+
+        buttonGroup3.add(chbEmber);
+        chbEmber.setText("Az ember tragédiája");
+
+        buttonGroup5.add(chbHegedus);
+        chbHegedus.setText("Hegedűs a háztetőn");
+
+        buttonGroup6.add(chbIstvan);
+        chbIstvan.setText("István, A Király");
+
+        buttonGroup6.add(chbAlom);
+        chbAlom.setText("Szentivánéji álom");
+
+        buttonGroup4.add(chbHolle);
+        chbHolle.setText("Holle anyó");
+
+        buttonGroup2.add(chbKrum);
+        chbKrum.setText("Krum");
+
+        buttonGroup7.add(chbNap);
+        chbNap.setText(" 80 nap alatt a Föld körül");
+
+        buttonGroup7.add(chbBarany);
+        chbBarany.setText("Az utolsó bárány");
+
+        buttonGroup7.add(chbGengszter);
+        chbGengszter.setText("Gengszter nagyi");
+
+        buttonGroup4.add(chbHattyuk);
+        chbHattyuk.setText("A hattyúk tava");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(chbDiotoro, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chbBarany, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chbEmber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chbHattyuk)
+                            .addComponent(chbHolle, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chbCsongor, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chbRomeo))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chbIstvan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chbVarazsfuvola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chbNap, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(chbGengszter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chbAlom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(chbHarom, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chbHegedus))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(chbKrum, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chbGatsby, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(chbJuan, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chbFiuk, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(chbGatsby)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbHegedus)
+                        .addGap(18, 18, 18)
+                        .addComponent(chbVarazsfuvola)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(chbJuan)
+                            .addComponent(chbFiuk))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbKrum)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbHarom)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chbRomeo)
+                        .addGap(6, 6, 6)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(chbIstvan))
+                    .addComponent(chbCsongor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbAlom)
+                    .addComponent(chbEmber))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbDiotoro)
+                    .addComponent(chbBarany))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbHolle)
+                    .addComponent(chbGengszter, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbNap)
+                    .addComponent(chbHattyuk))
+                .addGap(41, 41, 41))
+        );
+
+        btnVesz.setText("Megveszem");
+        btnVesz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVeszActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(73, 73, 73)
+                        .addComponent(btnVesz))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(179, Short.MAX_VALUE))
+                        .addGap(163, 163, 163)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34)
+                .addComponent(btnVesz)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void chbDramaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbDramaItemStateChanged
+        if (chbDrama.isSelected()) {
+            chbHarom.setEnabled(false);
+            chbJuan.setEnabled(false);
+            chbKrum.setEnabled(false);
+            chbDiotoro.setEnabled(false);
+            chbHolle.setEnabled(false);
+            chbHattyuk.setEnabled(false);
+            chbFiuk.setEnabled(false);
+            chbGatsby.setEnabled(false);
+            chbHegedus.setEnabled(false);
+            chbVarazsfuvola.setEnabled(false);
+            chbIstvan.setEnabled(false);
+            chbAlom.setEnabled(false);
+            chbBarany.setEnabled(false);
+            chbGengszter.setEnabled(false);
+            chbNap.setEnabled(false);
+
+        } else {
+            chbHarom.setEnabled(true);
+            chbJuan.setEnabled(true);
+            chbKrum.setEnabled(true);
+            chbDiotoro.setEnabled(true);
+            chbHolle.setEnabled(true);
+            chbHattyuk.setEnabled(true);
+            chbFiuk.setEnabled(true);
+            chbGatsby.setEnabled(true);
+            chbHegedus.setEnabled(true);
+            chbVarazsfuvola.setEnabled(true);
+            chbIstvan.setEnabled(true);
+            chbAlom.setEnabled(true);
+            chbBarany.setEnabled(true);
+            chbGengszter.setEnabled(true);
+            chbNap.setEnabled(true);
+        }
+    }//GEN-LAST:event_chbDramaItemStateChanged
+
+    private void chbMusicalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbMusicalItemStateChanged
+        if (chbMusical.isSelected()) {
+            chbHarom.setEnabled(false);
+            chbJuan.setEnabled(false);
+            chbKrum.setEnabled(false);
+            chbDiotoro.setEnabled(false);
+            chbHolle.setEnabled(false);
+            chbHattyuk.setEnabled(false);
+            chbRomeo.setEnabled(false);
+            chbCsongor.setEnabled(false);
+            chbEmber.setEnabled(false);
+            chbVarazsfuvola.setEnabled(false);
+            chbIstvan.setEnabled(false);
+            chbAlom.setEnabled(false);
+            chbBarany.setEnabled(false);
+            chbGengszter.setEnabled(false);
+            chbNap.setEnabled(false);
+
+        } else {
+            chbHarom.setEnabled(true);
+            chbJuan.setEnabled(true);
+            chbKrum.setEnabled(true);
+            chbDiotoro.setEnabled(true);
+            chbHolle.setEnabled(true);
+            chbHattyuk.setEnabled(true);
+            chbRomeo.setEnabled(true);
+            chbCsongor.setEnabled(true);
+            chbEmber.setEnabled(true);
+            chbVarazsfuvola.setEnabled(true);
+            chbIstvan.setEnabled(true);
+            chbAlom.setEnabled(true);
+            chbBarany.setEnabled(true);
+            chbGengszter.setEnabled(true);
+            chbNap.setEnabled(true);
+        }
+    }//GEN-LAST:event_chbMusicalItemStateChanged
+
+    private void chbOperaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbOperaItemStateChanged
+        if (chbOpera.isSelected()) {
+            chbHarom.setEnabled(false);
+            chbJuan.setEnabled(false);
+            chbKrum.setEnabled(false);
+            chbDiotoro.setEnabled(false);
+            chbHolle.setEnabled(false);
+            chbHattyuk.setEnabled(false);
+            chbFiuk.setEnabled(false);
+            chbGatsby.setEnabled(false);
+            chbHegedus.setEnabled(false);
+            chbCsongor.setEnabled(false);
+            chbEmber.setEnabled(false);
+            chbRomeo.setEnabled(false);
+            chbBarany.setEnabled(false);
+            chbGengszter.setEnabled(false);
+            chbNap.setEnabled(false);
+
+        } else {
+            chbHarom.setEnabled(true);
+            chbJuan.setEnabled(true);
+            chbKrum.setEnabled(true);
+            chbDiotoro.setEnabled(true);
+            chbHolle.setEnabled(true);
+            chbHattyuk.setEnabled(true);
+            chbFiuk.setEnabled(true);
+            chbGatsby.setEnabled(true);
+            chbHegedus.setEnabled(true);
+            chbCsongor.setEnabled(true);
+            chbEmber.setEnabled(true);
+            chbRomeo.setEnabled(true);
+            chbBarany.setEnabled(true);
+            chbGengszter.setEnabled(true);
+            chbNap.setEnabled(true);
+        }
+    }//GEN-LAST:event_chbOperaItemStateChanged
+
+    private void chbBalettItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbBalettItemStateChanged
+        if (chbBalett.isSelected()) {
+            chbHarom.setEnabled(false);
+            chbJuan.setEnabled(false);
+            chbKrum.setEnabled(false);
+            chbRomeo.setEnabled(false);
+            chbCsongor.setEnabled(false);
+            chbEmber.setEnabled(false);
+            chbFiuk.setEnabled(false);
+            chbGatsby.setEnabled(false);
+            chbHegedus.setEnabled(false);
+            chbVarazsfuvola.setEnabled(false);
+            chbIstvan.setEnabled(false);
+            chbAlom.setEnabled(false);
+            chbBarany.setEnabled(false);
+            chbGengszter.setEnabled(false);
+            chbNap.setEnabled(false);
+
+        } else {
+            chbHarom.setEnabled(true);
+            chbJuan.setEnabled(true);
+            chbKrum.setEnabled(true);
+            chbCsongor.setEnabled(true);
+            chbEmber.setEnabled(true);
+            chbRomeo.setEnabled(true);
+            chbFiuk.setEnabled(true);
+            chbGatsby.setEnabled(true);
+            chbHegedus.setEnabled(true);
+            chbVarazsfuvola.setEnabled(true);
+            chbIstvan.setEnabled(true);
+            chbAlom.setEnabled(true);
+            chbBarany.setEnabled(true);
+            chbGengszter.setEnabled(true);
+            chbNap.setEnabled(true);
+        }
+    }//GEN-LAST:event_chbBalettItemStateChanged
+
+    private void chbBabItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbBabItemStateChanged
+        if (chbBab.isSelected()) {
+            chbHarom.setEnabled(false);
+            chbJuan.setEnabled(false);
+            chbKrum.setEnabled(false);
+            chbDiotoro.setEnabled(false);
+            chbHolle.setEnabled(false);
+            chbHattyuk.setEnabled(false);
+            chbFiuk.setEnabled(false);
+            chbGatsby.setEnabled(false);
+            chbHegedus.setEnabled(false);
+            chbVarazsfuvola.setEnabled(false);
+            chbIstvan.setEnabled(false);
+            chbAlom.setEnabled(false);
+            chbRomeo.setEnabled(false);
+            chbCsongor.setEnabled(false);
+            chbEmber.setEnabled(false);
+
+        } else {
+            chbHarom.setEnabled(true);
+            chbJuan.setEnabled(true);
+            chbKrum.setEnabled(true);
+            chbDiotoro.setEnabled(true);
+            chbHolle.setEnabled(true);
+            chbHattyuk.setEnabled(true);
+            chbFiuk.setEnabled(true);
+            chbGatsby.setEnabled(true);
+            chbHegedus.setEnabled(true);
+            chbVarazsfuvola.setEnabled(true);
+            chbIstvan.setEnabled(true);
+            chbAlom.setEnabled(true);
+            chbRomeo.setEnabled(true);
+            chbCsongor.setEnabled(true);
+            chbEmber.setEnabled(true);
+        }
+    }//GEN-LAST:event_chbBabItemStateChanged
+
+    private void chbKomediaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbKomediaItemStateChanged
+        if (chbKomedia.isSelected()) {
+            chbRomeo.setEnabled(false);
+            chbCsongor.setEnabled(false);
+            chbEmber.setEnabled(false);
+            chbDiotoro.setEnabled(false);
+            chbHolle.setEnabled(false);
+            chbHattyuk.setEnabled(false);
+            chbFiuk.setEnabled(false);
+            chbGatsby.setEnabled(false);
+            chbHegedus.setEnabled(false);
+            chbVarazsfuvola.setEnabled(false);
+            chbIstvan.setEnabled(false);
+            chbAlom.setEnabled(false);
+            chbBarany.setEnabled(false);
+            chbGengszter.setEnabled(false);
+            chbNap.setEnabled(false);
+
+        } else {
+            chbRomeo.setEnabled(true);
+            chbCsongor.setEnabled(true);
+            chbEmber.setEnabled(true);
+            chbDiotoro.setEnabled(true);
+            chbHolle.setEnabled(true);
+            chbHattyuk.setEnabled(true);
+            chbFiuk.setEnabled(true);
+            chbGatsby.setEnabled(true);
+            chbHegedus.setEnabled(true);
+            chbVarazsfuvola.setEnabled(true);
+            chbIstvan.setEnabled(true);
+            chbAlom.setEnabled(true);
+            chbBarany.setEnabled(true);
+            chbGengszter.setEnabled(true);
+            chbNap.setEnabled(true);
+        }
+    }//GEN-LAST:event_chbKomediaItemStateChanged
+
+    private void cmbValaszthatoJegyekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbValaszthatoJegyekActionPerformed
+        int jegyIndex = cmbValaszthatoJegyek.getSelectedIndex();
+
+        if (jegyIndex == 0) {
+            jegyAlapAr = 0;
+        } else if (jegyIndex == 1) {   //Diák//
+            jegyAlapAr = 3500;
+
+        } else if (jegyIndex == 2) {  //Gyerek//
+            jegyAlapAr = 3000;
+
+        } else if (jegyIndex == 3) {   //Felnőtt//
+            jegyAlapAr = 4000;
+
+        } else if (jegyIndex == 4) {   //Kedvezményes//
+            jegyAlapAr = 2500;
+        }
+        eloadasSzamitasa();
+
+        db = 1;
+
+        szamitasEsKiiras();
+
+
+    }//GEN-LAST:event_cmbValaszthatoJegyekActionPerformed
+
+    private void numDbStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_numDbStateChanged
+        db = (int) numDb.getValue();
+        szamitasEsKiiras();
+    }//GEN-LAST:event_numDbStateChanged
+
+    private void btnVeszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeszActionPerformed
+        String sep = System.lineSeparator();
+        String jegy = (String)cmbValaszthatoJegyek.getSelectedItem();
+        String kimenet = "A választott jegy : " + jegy;
+        
+        kimenet += String.format(" (%d db)%s", db, sep);
+        
+              String kategoria;
+          if(chbKomedia.isSelected()){
+            kategoria = chbKomedia.getText();
+          
+          else if (chbDrama.isSelected(){
+           kategoria = chbDrama.getText();
+                  }
+          else if (chbMusical.isSelected()){
+            kategoria = chbMusical.getText();
+          }
+           else if (chbOpera.isSelected()){
+          kategoria = chbOpera.getText();
+                  }
+          else if (chbBalett.isSelected()){
+          kategoria = chbBalett.getText();
+                  }
+          else if (chbBab.isSelected()){
+          kategoria = chbBab.getText();
+                  }     
+        }else{
+            
+          }
+        kimenet += "kategória: " + kategoria;
+        kimenet += sep; 
+    }//GEN-LAST:event_btnVeszActionPerformed
+    private void EloadasokItemStateChanged(java.awt.event.ItemEvent evt) {
+        JCheckBox chb = (JCheckBox) evt.getSource();
+        int eloadasAra = 1500;
+
+        if (chb.isSelected()) {
+            eloadas += eloadasAra;
+        } else {
+            eloadas -= eloadasAra;
+        }
+
+        szamitasEsKiiras();
+    }
 
     /**
      * @param args the command line arguments
@@ -165,14 +790,82 @@ public class Szinhaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JButton btnVesz;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.JCheckBox chbAlom;
+    private javax.swing.JCheckBox chbBab;
+    private javax.swing.JCheckBox chbBalett;
+    private javax.swing.JCheckBox chbBarany;
+    private javax.swing.JCheckBox chbCsongor;
+    private javax.swing.JCheckBox chbDiotoro;
+    private javax.swing.JCheckBox chbDrama;
+    private javax.swing.JCheckBox chbEmber;
+    private javax.swing.JCheckBox chbFiuk;
+    private javax.swing.JCheckBox chbGatsby;
+    private javax.swing.JCheckBox chbGengszter;
+    private javax.swing.JCheckBox chbHarom;
+    private javax.swing.JCheckBox chbHattyuk;
+    private javax.swing.JCheckBox chbHegedus;
+    private javax.swing.JCheckBox chbHolle;
+    private javax.swing.JCheckBox chbIstvan;
+    private javax.swing.JCheckBox chbJuan;
+    private javax.swing.JCheckBox chbKomedia;
+    private javax.swing.JCheckBox chbKrum;
+    private javax.swing.JCheckBox chbMusical;
+    private javax.swing.JCheckBox chbNap;
+    private javax.swing.JCheckBox chbOpera;
+    private javax.swing.JCheckBox chbRomeo;
+    private javax.swing.JCheckBox chbVarazsfuvola;
+    private javax.swing.JComboBox<String> cmbValaszthatoJegyek;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblAr;
+    private javax.swing.JLabel lblFizFt;
+    private javax.swing.JLabel lblFizdb;
+    private javax.swing.JSpinner numDb;
     // End of variables declaration//GEN-END:variables
+
+    private void szamitasEsKiiras() {
+        int darabSzorzo = 0;
+        vegsoAr = jegyAlapAr;
+        vegsoAr *= db; //vegsoAr = vegsoAr * db;
+
+        lblAr.setText(vegsoAr + "");
+    }
+
+    private void eloadasSzamitasa() {
+        int eloadas1 = 100;
+        int eloadas2 = 0;
+        int eloadas3 = 0;
+        int eloadas4 = 0;
+        int eloadas5 = 0;
+        int eloadas6 = 0;
+        int eloadas7 = 0;
+        int eloadas8 = 0;
+        int eloadas9 = 0;
+        int eloadas10 = 0;
+        int eloadas11 = 0;
+        int eloadas12 = 0;
+        int eloadas13 = 0;
+        int eloadas14 = 0;
+        int eloadas15 = 0;
+        int eloadas16 = 0;
+        int eloadas17 = 0;
+        int eloadas18 = 0;
+        
+        eloadas = eloadas1 + eloadas2 + eloadas3 + eloadas4 + eloadas5 
+                +eloadas6 + eloadas7 + eloadas8 + eloadas9 + eloadas10
+                +eloadas11 +eloadas12 +eloadas13 +eloadas14 +eloadas15
+                +eloadas16 +eloadas17 +eloadas18;
+}
 }
