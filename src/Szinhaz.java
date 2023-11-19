@@ -531,22 +531,21 @@ public class Szinhaz extends javax.swing.JFrame {
 
         chbErtesites.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         chbErtesites.setSelected(true);
-        chbErtesites.setText("Szeretnék értesítést kapni ");
+        chbErtesites.setText("Szeretnék értesítést kapni a további informáciokról");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(btnVesz, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(btnMegse, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(chbErtesites, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chbErtesites, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(btnVesz, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnMegse, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -556,8 +555,8 @@ public class Szinhaz extends javax.swing.JFrame {
                     .addComponent(btnMegse, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVesz, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(chbErtesites)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(chbErtesites, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Drama_maszk1.png"))); // NOI18N
@@ -920,57 +919,94 @@ public class Szinhaz extends javax.swing.JFrame {
         
         if(chbJuan.isSelected()){
             kimenet += " - Don Juan" + sep;
+            kimenet += "Helyszín: Nemzeti Színház" + sep;
+            kimenet += "Dátum: 2023.január 4. 19:00" +sep;
         }
         if(chbKrum.isSelected()){
             kimenet += " - Krum" + sep;
+            kimenet += "Helyszín: Vígszínház" + sep;
+            kimenet += "Dátum: 2023.december 28. 19:00" +sep;
         }
          if(chbHarom.isSelected()){
             kimenet += " - Három Komédia" + sep;
+            kimenet += "Helyszín: Madách Színház" + sep;
+            kimenet += "Dátum: 2023.január 22. 19:00" +sep;
         }
           if(chbRomeo.isSelected()){
-            kimenet += " - Rómeó és Júlia" + sep;   
+            kimenet += " - Rómeó és Júlia" + sep;  
+            kimenet += "Helyszín: Nemzeti Színház" + sep;
+            kimenet += "Dátum: 2023.január 12. 17:00" +sep;
         } if(chbCsongor.isSelected()){
             kimenet += " - Csongor és Tünde" + sep;
+            kimenet += "Helyszín: Nemzeti Színház" + sep;
+            kimenet += "Dátum: 2023.január 10. 17:00" +sep;
         }
          if(chbEmber.isSelected()){
             kimenet += " - Az ember tragédiája" + sep;
+            kimenet += "Helyszín: Nemzeti Színház" + sep;
+            kimenet += "Dátum: 2024.január 8. 17:00" +sep;
         }
           if(chbDiotoro.isSelected()){
             kimenet += " - A Diótörő" + sep;
+            kimenet += "Helyszín: Erkel Színház" + sep;
+            kimenet += "Dátum: 2023.december 26. 18:00" +sep;
         }
            if(chbHolle.isSelected()){
             kimenet += " - Holle anyó" + sep;
+            kimenet += "Helyszín: Erkel Színház" + sep;
+            kimenet += "Dátum: 2023.december 2. 15:00" +sep;
         }
             if(chbHattyuk.isSelected()){
             kimenet += " - A hattyúk tava" + sep;
+            kimenet += "Helyszín: Erkel Színház" + sep;
         }
              if(chbFiuk.isSelected()){
             kimenet += " - A pál utcai fiúk" + sep;
+            kimenet += "Helyszín: Vígszínház" + sep;
+            kimenet += "Dátum: 2023.november 25. 16:00" +sep;
         }
               if(chbGatsby.isSelected()){
             kimenet += " - A nagy Gatsby" + sep;
+            kimenet += "Helyszín: Vígszínház" + sep;  
+            kimenet += "Dátum: 2023.november 24. 21:00" +sep;
         }
            if(chbHegedus.isSelected()){
             kimenet += " - Hegedűs a háztetőn" + sep;
+            kimenet += "Helyszín: Operettszínház" + sep;
+            kimenet += "Dátum: 2023.december 21. 19:00" +sep;
+            
         }
             if(chbVarazsfuvola.isSelected()){
             kimenet += " - A Varázsfuvola" + sep;
+            kimenet += "Helyszín: Operettszínház" + sep;
+            kimenet += "Dátum: 2023.november 20. 18:00" +sep;
         }
              if(chbIstvan.isSelected()){
             kimenet += " - István,A király" + sep;
+            kimenet += "Helyszín: Operettszínház" + sep;
+            kimenet += "Dátum: 2023.november 27. 17:00" +sep;
         }
               if(chbAlom.isSelected()){
             kimenet += " - Szentivánéji álom" + sep;
+            kimenet += "Helyszín: Operettszínház" + sep;
+            kimenet += "Dátum: 2024.január 6. 20:00" +sep;
         }
                if(chbBarany.isSelected()){
             kimenet += " - Az utolsó bárány" + sep;
+            kimenet += "Helyszín: Bábszínház" + sep;
+            kimenet += "Dátum: 2023.december 6. 15:00" +sep;
         }
                 if(chbGengszter.isSelected()){
             kimenet += " - Gengszter nagyi" + sep;
+            kimenet += "Helyszín: Bábszínház" + sep;
+            kimenet += "Dátum: 2023.december 12. 18:00" +sep;
         }
            if(chbNap.isSelected()){
             kimenet += " - 80 nap alatt a Föld körül" + sep;
+            kimenet += "Helyszín: Bábszínház" + sep;
+            kimenet += "Dátum: 2023.március 31. 19:00" +sep;
         }
+        
         kimenet += "Rászámolás: " + raszamolas;
         kimenet += sep; 
         if (btnVesz.isSelected()){
