@@ -1,5 +1,4 @@
 
-import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 /*
@@ -13,8 +12,9 @@ import javax.swing.JOptionPane;
 public class Szinhaz extends javax.swing.JFrame {
 
     int jegyAlapAr = -1;
-    int db, eloadasAra, eloadas, darabszorzo;
+    int db,kategoriak, eloadas, darabszorzo;
     double vegsoAr;
+    int raszamolas = 1500;
 
     /**
      * Creates new form Szinhaz
@@ -23,14 +23,14 @@ public class Szinhaz extends javax.swing.JFrame {
         initComponents();
         jegyAlapAr = 0;
         
-     
-         eloadasSzamitasa();
-
+        darabszorzo = 1;
+       
         db = 1;
 
         szamitasEsKiiras();
     }
 
+  
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,14 +57,6 @@ public class Szinhaz extends javax.swing.JFrame {
         chbMusical = new javax.swing.JCheckBox();
         chbKomedia = new javax.swing.JCheckBox();
         jTextField2 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        lblFizdb = new javax.swing.JLabel();
-        numDb = new javax.swing.JSpinner();
-        lblAr = new javax.swing.JLabel();
-        lblFizFt = new javax.swing.JLabel();
-        cmbValaszthatoJegyek = new javax.swing.JComboBox<>();
-        btnInfo = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         chbHarom = new javax.swing.JCheckBox();
         chbFiuk = new javax.swing.JCheckBox();
@@ -84,24 +76,34 @@ public class Szinhaz extends javax.swing.JFrame {
         chbBarany = new javax.swing.JCheckBox();
         chbGengszter = new javax.swing.JCheckBox();
         chbHattyuk = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        lblFizdb = new javax.swing.JLabel();
+        numDb = new javax.swing.JSpinner();
+        lblAr = new javax.swing.JLabel();
+        lblFizFt = new javax.swing.JLabel();
+        cmbValaszthatoJegyek = new javax.swing.JComboBox<>();
+        btnInfo = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        txaOsszesito = new javax.swing.JTextArea();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         btnMegse = new javax.swing.JButton();
         btnVesz = new javax.swing.JButton();
         chbErtesites = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Színház");
 
-        jPanel6.setBackground(new java.awt.Color(225, 202, 232));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setPreferredSize(new java.awt.Dimension(900, 800));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Kategóriák"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(226, 184, 46)));
 
         buttonGroup1.add(chbBab);
         chbBab.setText("Bábjáték");
@@ -151,7 +153,163 @@ public class Szinhaz extends javax.swing.JFrame {
             }
         });
 
+        jTextField2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jTextField2.setText("Kérem válasszon kategóriát!");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(226, 184, 46)));
+
+        chbHarom.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbHarom.setText("Három komédia");
+
+        chbFiuk.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbFiuk.setText("A Pál utcai fiúk");
+
+        chbGatsby.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbGatsby.setText("A nagy Gatsby");
+
+        chbDiotoro.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbDiotoro.setText("A Diótörő");
+
+        chbVarazsfuvola.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbVarazsfuvola.setText("A Varázsfuvola");
+
+        chbJuan.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbJuan.setText("Don Juan");
+
+        chbRomeo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbRomeo.setText("Rómeó és Júlia");
+
+        chbCsongor.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbCsongor.setText("Csongor és Tünde");
+
+        chbEmber.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbEmber.setText("Az ember tragédiája");
+
+        chbHegedus.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbHegedus.setText("Hegedűs a háztetőn");
+
+        chbIstvan.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbIstvan.setText("István, A Király");
+
+        chbAlom.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbAlom.setText("Szentivánéji álom");
+
+        chbHolle.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbHolle.setText("Holle anyó");
+
+        chbKrum.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbKrum.setText("Krum");
+
+        chbNap.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbNap.setText(" 80 nap alatt a Föld körül");
+
+        chbBarany.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbBarany.setText("Az utolsó bárány");
+
+        chbGengszter.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbGengszter.setText("Gengszter nagyi");
+
+        chbHattyuk.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbHattyuk.setText("A hattyúk tava");
+
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel3.setText("Előadás");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(chbJuan, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chbFiuk, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chbEmber, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(chbHattyuk)
+                                            .addComponent(chbHolle, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(chbCsongor, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(chbRomeo))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chbVarazsfuvola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbIstvan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbAlom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbGengszter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbNap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(chbDiotoro, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(chbBarany, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chbKrum, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbHarom, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chbGatsby, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbHegedus, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(chbFiuk)
+                            .addComponent(chbJuan))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbGatsby)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbHegedus)
+                        .addGap(18, 18, 18)
+                        .addComponent(chbVarazsfuvola)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(chbKrum)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbHarom, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(chbRomeo)
+                        .addGap(6, 6, 6)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chbIstvan)
+                    .addComponent(chbCsongor))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbEmber)
+                    .addComponent(chbAlom))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbDiotoro)
+                    .addComponent(chbBarany))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbHolle)
+                    .addComponent(chbGengszter, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbNap)
+                    .addComponent(chbHattyuk))
+                .addGap(24, 24, 24))
+        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -162,26 +320,33 @@ public class Szinhaz extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(chbDrama, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(chbMusical, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(chbKomedia, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chbBalett, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chbOpera, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chbBab, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(chbDrama, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbMusical, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(126, 126, 126)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(chbBalett, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chbBab, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(chbKomedia, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(120, 120, 120)
+                                .addComponent(chbOpera, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addGap(43, 43, 43)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chbOpera)
                     .addComponent(chbKomedia))
@@ -193,16 +358,25 @@ public class Szinhaz extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chbMusical)
                     .addComponent(chbBab))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Jegyek"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(226, 184, 46)));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Fizetendő"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fizetendő", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 1, 14))); // NOI18N
 
         lblFizdb.setText("db:");
+        lblFizdb.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                lblFizdbInputMethodTextChanged(evt);
+            }
+        });
 
         numDb.setModel(new javax.swing.SpinnerNumberModel(1, 0, 20, 1));
         numDb.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -221,14 +395,14 @@ public class Szinhaz extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(lblAr, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblAr, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblFizFt, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(lblFizdb)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(numDb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -246,6 +420,7 @@ public class Szinhaz extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        cmbValaszthatoJegyek.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         cmbValaszthatoJegyek.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kérem válasszon jegyet!", "Diák", "Gyerek", "Felnőtt", "Kedvezményes", "Családi", "Páros", "Csoportos" }));
         cmbValaszthatoJegyek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,6 +428,7 @@ public class Szinhaz extends javax.swing.JFrame {
             }
         });
 
+        btnInfo.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         btnInfo.setText("Jegy infó");
         btnInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,196 +441,52 @@ public class Szinhaz extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(cmbValaszthatoJegyek, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(btnInfo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addGap(22, 22, 22))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cmbValaszthatoJegyek, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
                 .addComponent(cmbValaszthatoJegyek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(btnInfo))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24))
-        );
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Előadások"));
-
-        chbHarom.setText("Három komédia");
-        chbHarom.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                EloadasokItemStateChanged(evt);
-            }
-        });
-
-        chbFiuk.setText("A Pál utcai fiúk");
-
-        chbGatsby.setText("A nagy Gatsby");
-
-        chbDiotoro.setText("A Diótörő");
-
-        chbVarazsfuvola.setText("A Varázsfuvola");
-
-        chbJuan.setText("Don Juan");
-        chbJuan.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                EloadasokItemStateChanged(evt);
-            }
-        });
-
-        chbRomeo.setText("Rómeó és Júlia");
-
-        chbCsongor.setText("Csongor és Tünde");
-
-        chbEmber.setText("Az ember tragédiája");
-
-        chbHegedus.setText("Hegedűs a háztetőn");
-
-        chbIstvan.setText("István, A Király");
-
-        chbAlom.setText("Szentivánéji álom");
-
-        chbHolle.setText("Holle anyó");
-
-        chbKrum.setText("Krum");
-        chbKrum.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                EloadasokItemStateChanged(evt);
-            }
-        });
-
-        chbNap.setText(" 80 nap alatt a Föld körül");
-
-        chbBarany.setText("Az utolsó bárány");
-
-        chbGengszter.setText("Gengszter nagyi");
-
-        chbHattyuk.setText("A hattyúk tava");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(chbDiotoro, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chbBarany, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chbEmber, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chbHattyuk)
-                            .addComponent(chbHolle, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chbCsongor, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chbRomeo))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chbIstvan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chbVarazsfuvola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chbNap, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(chbGengszter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chbAlom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(chbHarom, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chbHegedus))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(chbKrum, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chbGatsby, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(chbJuan, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chbFiuk, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(chbGatsby)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbHegedus)
-                        .addGap(18, 18, 18)
-                        .addComponent(chbVarazsfuvola)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chbJuan)
-                            .addComponent(chbFiuk))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbKrum)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chbHarom)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chbRomeo)
-                        .addGap(6, 6, 6)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(chbIstvan))
-                    .addComponent(chbCsongor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chbAlom)
-                    .addComponent(chbEmber))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbDiotoro)
-                    .addComponent(chbBarany))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbHolle)
-                    .addComponent(chbGengszter, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chbNap)
-                    .addComponent(chbHattyuk))
-                .addGap(41, 41, 41))
+                        .addGap(20, 20, 20)
+                        .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Összesítő"));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(226, 184, 46)), "Összesítő", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 1, 14))); // NOI18N
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txaOsszesito.setColumns(20);
+        txaOsszesito.setRows(5);
+        jScrollPane1.setViewportView(txaOsszesito);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                .addContainerGap())
         );
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Drama_maszk.png"))); // NOI18N
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -468,18 +500,20 @@ public class Szinhaz extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnMegse.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         btnMegse.setText("Mégse");
         btnMegse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -487,6 +521,7 @@ public class Szinhaz extends javax.swing.JFrame {
             }
         });
 
+        btnVesz.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         btnVesz.setText("Megveszem");
         btnVesz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -494,6 +529,8 @@ public class Szinhaz extends javax.swing.JFrame {
             }
         });
 
+        chbErtesites.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chbErtesites.setSelected(true);
         chbErtesites.setText("Szeretnék értesítést kapni ");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -503,7 +540,7 @@ public class Szinhaz extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(btnVesz, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addComponent(btnMegse, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
             .addGroup(jPanel8Layout.createSequentialGroup()
@@ -523,63 +560,50 @@ public class Szinhaz extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Drama_maszk1.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(81, 81, 81)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)))
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(94, 94, 94))
+            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(0, 3, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(13, 13, 13))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38))))
+                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 33, Short.MAX_VALUE))))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -588,15 +612,14 @@ public class Szinhaz extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 908, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -677,7 +700,7 @@ public class Szinhaz extends javax.swing.JFrame {
     }//GEN-LAST:event_chbMusicalItemStateChanged
 
     private void chbOperaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbOperaItemStateChanged
-        if (chbOpera.isSelected()) {
+         if (chbOpera.isSelected()) {
             chbHarom.setEnabled(false);
             chbJuan.setEnabled(false);
             chbKrum.setEnabled(false);
@@ -826,37 +849,36 @@ public class Szinhaz extends javax.swing.JFrame {
 
     private void cmbValaszthatoJegyekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbValaszthatoJegyekActionPerformed
         int jegyIndex = cmbValaszthatoJegyek.getSelectedIndex();
-
-        if (jegyIndex == 0) {
+ 
+        if(jegyIndex == 0){ 
             jegyAlapAr = 0;
-        } else if (jegyIndex == 1) {   //Diák//
+        }else if(jegyIndex == 1){ //Diák
             jegyAlapAr = 3500;
-
-        } else if (jegyIndex == 2) {  //Gyerek//
+        }else if(jegyIndex == 2){ //Gyerek
             jegyAlapAr = 3000;
-
-        } else if (jegyIndex == 3) {   //Felnőtt//
-            jegyAlapAr = 4000;
-
-        } else if (jegyIndex == 4) {   //Kedvezményes//
-            jegyAlapAr = 2500;
-            
-        } else if (jegyIndex == 5) {   //Családi
-            jegyAlapAr = 12000;
-            
-        } else if (jegyIndex == 6) {   //Páros
-            jegyAlapAr = 6000;
-        
-        } else if (jegyIndex == 7) {   //Csoportos
-            jegyAlapAr = 16000;
+        }else if(jegyIndex == 3){ //Felnőtt
+             jegyAlapAr = 4000;
+        }else if(jegyIndex == 4){ //Kedvezményes
+             jegyAlapAr = 2500;
+        }else if(jegyIndex == 5){ //Családi
+             jegyAlapAr = 13000;
+        }else if(jegyIndex == 6){ //Páros
+             jegyAlapAr = 6000;
+        }else if(jegyIndex == 7){ //Csoportos
+             jegyAlapAr = 16000;
         }
-        eloadasSzamitasa();
-
-        db = 1;
-
+        
+        
+        int kategoria1 = 0;
+        int kategoria2 = 0;
+        int kategoria3 = 0;
+        int kategoria4 = 0;
+        int kategoria5 = 0;
+        int kategoria6 = 0;
+       kategoriak = kategoria1 + kategoria2 + kategoria3
+               + kategoria4 +kategoria5 +kategoria6;
+       db= 1;
         szamitasEsKiiras();
-
-
     }//GEN-LAST:event_cmbValaszthatoJegyekActionPerformed
 
     private void numDbStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_numDbStateChanged
@@ -865,37 +887,97 @@ public class Szinhaz extends javax.swing.JFrame {
     }//GEN-LAST:event_numDbStateChanged
 
     private void btnVeszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeszActionPerformed
-        String sep = System.lineSeparator();
+       String sep = System.lineSeparator();
+        
         String jegy = (String)cmbValaszthatoJegyek.getSelectedItem();
         String kimenet = "A választott jegy : " + jegy;
-        
+ 
         kimenet += String.format(" (%d db)%s", db, sep);
-        
-              String kategoria = null;
-          if(chbKomedia.isSelected()){
-            kategoria = chbKomedia.getText();
-          
-          if(chbDrama.isSelected()){
-           kategoria = chbDrama.getText();
-                  }
-          else if (chbMusical.isSelected()){
-            kategoria = chbMusical.getText();
-          }
-           else if (chbOpera.isSelected()){
-          kategoria = chbOpera.getText();
-                  }
-          else if (chbBalett.isSelected()){
-          kategoria = chbBalett.getText();
-                  }
-          else if (chbBab.isSelected()){
-          kategoria = chbBab.getText();
-                  }     
-        }else{
+       
+        String kategoria = null;
+        if(chbKomedia.isSelected()){
+           kategoria = chbKomedia.getText();
            
-          }
-        kimenet += "kategória: " + kategoria;
+        }else if (chbDrama.isSelected()){
+            kategoria = chbDrama.getText();
+            
+        }else if (chbMusical.isSelected()){
+            kategoria = chbMusical.getText();
+            
+        }else if (chbOpera.isSelected()){
+            kategoria = chbOpera.getText();
+            
+        }else if (chbBalett.isSelected()){
+            kategoria = chbBalett.getText();
+            
+        }else if (chbBab.isSelected()){
+            kategoria = chbBab.getText();
+        }
+        kimenet += "Kategória: " + kategoria;
         kimenet += sep; 
-        kimenet += "jegyek: " +sep;
+        
+        kimenet += "Előadás: " + sep;
+        
+        if(chbJuan.isSelected()){
+            kimenet += " - Don Juan" + sep;
+        }
+        if(chbKrum.isSelected()){
+            kimenet += " - Krum" + sep;
+        }
+         if(chbHarom.isSelected()){
+            kimenet += " - Három Komédia" + sep;
+        }
+          if(chbRomeo.isSelected()){
+            kimenet += " - Rómeó és Júlia" + sep;   
+        } if(chbCsongor.isSelected()){
+            kimenet += " - Csongor és Tünde" + sep;
+        }
+         if(chbEmber.isSelected()){
+            kimenet += " - Az ember tragédiája" + sep;
+        }
+          if(chbDiotoro.isSelected()){
+            kimenet += " - A Diótörő" + sep;
+        }
+           if(chbHolle.isSelected()){
+            kimenet += " - Holle anyó" + sep;
+        }
+            if(chbHattyuk.isSelected()){
+            kimenet += " - A hattyúk tava" + sep;
+        }
+             if(chbFiuk.isSelected()){
+            kimenet += " - A pál utcai fiúk" + sep;
+        }
+              if(chbGatsby.isSelected()){
+            kimenet += " - A nagy Gatsby" + sep;
+        }
+           if(chbHegedus.isSelected()){
+            kimenet += " - Hegedűs a háztetőn" + sep;
+        }
+            if(chbVarazsfuvola.isSelected()){
+            kimenet += " - A Varázsfuvola" + sep;
+        }
+             if(chbIstvan.isSelected()){
+            kimenet += " - István,A király" + sep;
+        }
+              if(chbAlom.isSelected()){
+            kimenet += " - Szentivánéji álom" + sep;
+        }
+               if(chbBarany.isSelected()){
+            kimenet += " - Az utolsó bárány" + sep;
+        }
+                if(chbGengszter.isSelected()){
+            kimenet += " - Gengszter nagyi" + sep;
+        }
+           if(chbNap.isSelected()){
+            kimenet += " - 80 nap alatt a Föld körül" + sep;
+        }
+        kimenet += "Rászámolás: " + raszamolas;
+        kimenet += sep; 
+        if (btnVesz.isSelected()){
+            kimenet += "1500Ft" +sep;
+        }
+      
+        txaOsszesito.setText(kimenet);
     }//GEN-LAST:event_btnVeszActionPerformed
 
     private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
@@ -904,24 +986,15 @@ public class Szinhaz extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnInfoActionPerformed
 
-    private void EloadasokItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_EloadasokItemStateChanged
-        JCheckBox chb = (JCheckBox)evt.getSource();
-        int eloadasAra = 1500;
-
-        if (chb.isSelected()) {
-            eloadas += eloadasAra;
-        } else {
-            eloadas -= eloadasAra;
-        }
-
-        szamitasEsKiiras();
-
-
-    }//GEN-LAST:event_EloadasokItemStateChanged
-
     private void btnMegseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMegseActionPerformed
          System.exit(0);
     }//GEN-LAST:event_btnMegseActionPerformed
+
+    private void lblFizdbInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_lblFizdbInputMethodTextChanged
+       darabszorzo = 1;
+       
+       szamitasEsKiiras();
+    }//GEN-LAST:event_lblFizdbInputMethodTextChanged
    // private void EloadasokItemStateChanged(java.awt.event.ItemEvent evt) {
        
     /**
@@ -998,6 +1071,7 @@ public class Szinhaz extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbValaszthatoJegyek;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1007,46 +1081,22 @@ public class Szinhaz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblAr;
     private javax.swing.JLabel lblFizFt;
     private javax.swing.JLabel lblFizdb;
     private javax.swing.JSpinner numDb;
+    private javax.swing.JTextArea txaOsszesito;
     // End of variables declaration//GEN-END:variables
 
     private void szamitasEsKiiras() {
-        int darabszorzo = 0;
-        vegsoAr = jegyAlapAr + eloadasAra;
-        vegsoAr *= db; //vegsoAr = vegsoAr * db;
-
+        vegsoAr = jegyAlapAr * darabszorzo + eloadas + kategoriak + raszamolas;
+        vegsoAr *= db; 
+        
         lblAr.setText(vegsoAr + "");
         
     }
 
-    private void eloadasSzamitasa() {
-        int eloadas1 = 100;
-        int eloadas2 = 0;
-        int eloadas3 = 0;
-        int eloadas4 = 0;
-        int eloadas5 = 0;
-        int eloadas6 = 0;
-        int eloadas7 = 0;
-        int eloadas8 = 0;
-        int eloadas9 = 0;
-        int eloadas10 = 0;
-        int eloadas11 = 0;
-        int eloadas12 = 0;
-        int eloadas13 = 0;
-        int eloadas14 = 0;
-        int eloadas15 = 0;
-        int eloadas16 = 0;
-        int eloadas17 = 0;
-        int eloadas18 = 0;
-        
-        eloadas = eloadas1 + eloadas2 + eloadas3 + eloadas4 + eloadas5 
-                +eloadas6 + eloadas7 + eloadas8 + eloadas9 + eloadas10
-                +eloadas11 +eloadas12 +eloadas13 +eloadas14 +eloadas15
-                +eloadas16 +eloadas17 +eloadas18;
-}
+   
+
 }
